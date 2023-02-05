@@ -1,0 +1,100 @@
+{% extends 'Structure/header.html' %}
+
+{% block content %} 
+{% load static %}
+ <!-- page navbar -->
+ <nav class="page-navbar" data-spy="affix" data-offset-top="10">
+    <ul class="nav-navbar container">
+        
+        <li class="nav-item"><a href="{% url 'entity' entity_id%}" class="nav-link">Back</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link"><img src="{% static 'Structure/imgs/nuclear.png'%}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page"></a></li>
+        <li class="nav-item"><a href="{% url 'options' %}" class="nav-link">Options</a></li>
+        <li class="nav-item"><a href="{% url 'edit_finaspect' entity_id finaspect.pk %}" class="nav-link">Edit</a></li>
+        <li class="nav-item"><a href="{% url 'delete_finaspect' entity_id finaspect.pk 0 %}" class="nav-link">Delete</a></li>
+    </ul>
+</nav><!-- end of page navbar -->
+
+<div class="theme-selector">
+    <a href="javascript:void(0)" class="spinner">
+        <i class="ti-paint-bucket"></i>
+    </a>
+    <div class="body">
+        <a href="javascript:void(0)" class="light"></a>
+        <a href="javascript:void(0)" class="dark"></a>
+    </div>
+</div>  
+
+<!-- page header -->
+<header class="header" style="background-image: url({{ finaspect.image.url }});">
+    <div class="overlay"></div>
+    <div class="header-content" >
+        <h1 class="header-title">{{finaspect.name}}</h1>
+        
+        <h4>type: {{finaspect.active}}</h4>
+        <p class="header-subtitle">{{element.description}}</p>
+        
+       
+
+    </div>
+</header><!-- end of page header -->
+
+
+<!-- page container -->
+<div class="container page-container">
+    <div class="col-md-10 col-lg-8 m-auto">
+        <h6 class="title mb-4">Aspects of {{finaspect.name}}</h6>
+        {%if growth > 0 %}
+                    <h3 style = "color:green;">Growth: {{growth}}%</h3>
+                    {% else %}
+                    <h3 style="color:red;">Growth: {{growth}}%</h3>
+                    {% endif %}
+    </div>  
+
+    <!-- row -->
+    <div class="row mb-4">
+    {% if updates %}
+        {% for update in updates %}
+        <div class="col-md-4" {% if first == update %} style = "box-shadow: 0 0 100px greenyellow;" {%else%} style = "box-shadow: 0 0 100px red;" {%endif%}>
+            <a href="{% url 'update' entity_id finaspect.pk update.pk%}" class="overlay-img">
+               
+                <img src="{{finaspect.image.url }}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">
+                <div class="overlay"></div> 
+                <div class="des">
+                    <h3 class="title">{{update.date}}</h3>
+                    
+                    <h3>R {{update.amount}}</h3>
+                </div>      
+               
+            </a>
+        </div>
+        
+        {% endfor %}
+        
+        {% else %}
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        <p>Nothing Listed Yet</p>
+        </div>
+        <div class="col-md-4">
+        </div>
+       </div> 
+    {%endif%}
+    </div>
+    <div class="col-md-10 col-lg-8 m-auto">
+        <h2> <a href="{% url 'add_update' entity_id finaspect.pk%}">Add Update</a></h2>
+     </div>
+
+    
+    
+
+    <!--<a href="#">Load More <i class="ti-angle-double-right angle"></i></a>-->
+    
+
+   
+
+</div> <!-- end of page container -->
+
+
+{% endblock %}

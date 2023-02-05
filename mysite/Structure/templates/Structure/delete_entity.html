@@ -1,0 +1,18 @@
+
+
+{% extends "Structure/header.html" %}
+
+{% block content %} 
+<h2>Are you sure you want to delete this entity</h2>
+
+
+    <h2><a href="{% url 'delete_entity' entity_id 1 %}" class="overlay-img">
+        
+        Delete         
+    </a></h2>
+
+    <h2><a href="{% url 'delete_entity' entity_id 3 %}" class="overlay-img">
+        
+        Cancel</a></h2>
+
+{% endblock %} 

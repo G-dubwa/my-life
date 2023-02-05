@@ -1,0 +1,174 @@
+.btn-primary{
+    background-color: yellow;
+    color: black;
+}
+
+a{
+    color: yellow;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+input {
+  caret-color: red;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../imgs/Patrick_Bateman.6f735f72da8b.jpg");
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  place-items: center;
+  overflow: scroll;
+  --font-family-sans-serif: "Quicksand", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 350px;
+  
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  display: inline-block;
+        
+}
+
+.brand-logo {
+  height: 100px;
+  width: 100px;
+  background: url("https://img.icons8.com/color/100/000000/twitter--v2.png");
+  margin: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+
+.brand-title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #1DA1F2;
+  letter-spacing: 1px;
+}
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+button {
+  color: black;
+  margin-top: 20px;
+  background: yellow;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+a {
+  position: absolute;
+  font-size: 8px;
+  bottom: 4px;
+  right: 4px;
+  text-decoration: none;
+  color: black;
+  background: yellow;
+  ali
+  border-radius: 10px;
+  padding: 2px;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#id_image {
+    color: transparent;
+  }
+#id_image::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+#id_image::before {
+    content: 'Pic an image';
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+#id_image:hover::before {
+    border-color: black;
+  }
+#id_image:active {
+    outline: 0;
+  }
+#id_image:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  textarea{
+    width: 100%;
+  }
+

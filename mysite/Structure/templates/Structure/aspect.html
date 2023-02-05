@@ -1,0 +1,41 @@
+{% extends 'Structure/header.html' %}
+
+{% block content %} 
+{% load static %}
+ <!-- page navbar -->
+ <nav class="page-navbar" data-spy="affix" data-offset-top="10">
+    <ul class="nav-navbar container">
+        <li class="nav-item"><a href="{% url 'element' priority_id element_id%}" class="nav-link">Back</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link"><img src="{% static 'Structure/imgs/nuclear.png'%}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page"></a></li>
+        <li class="nav-item"><a href="{% url 'options' %}" class="nav-link">Options</a></li>
+        
+        <li class="nav-item"><a href="{% url 'edit_aspect' priority_id element_id aspect.pk %}" class="nav-link">Edit</a></li>
+        <li class="nav-item"><a href="{% url 'delete_aspect' priority_id element_id aspect.pk 0 %}" class="nav-link">Delete</a></li>
+    </ul>
+</nav><!-- end of page navbar -->
+
+
+<div class="theme-selector">
+    <a href="javascript:void(0)" class="spinner">
+        <i class="ti-paint-bucket"></i>
+    </a>
+    <div class="body">
+        <a href="javascript:void(0)" class="light"></a>
+        <a href="javascript:void(0)" class="dark"></a>
+    </div>
+</div>  
+<header class="header" style="background-image: url({{ aspect.image.url }});">
+    <div class="overlay"></div>
+    <div class="header-content" >
+        <h1 class="header-title">{{aspect.aspect_name}}</h1>
+        <h3>importance: {{aspect.get_significance_display}}</h3>
+        <h4>Completed: {{aspect.completion}}</h4>
+        <p class="header-subtitle">{{aspect.description}}</p>
+        
+       
+
+    </div>
+</header><!-- end of page header -->
+
+{% endblock %}

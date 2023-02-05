@@ -1,0 +1,43 @@
+{% extends "Structure/login_header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+
+<div class="container py-5">
+  <br>
+<br> <br>
+<br> <br>
+<br> <br>
+
+<br>
+
+	<h1>Register</h1>
+  <button class="btn btn-primary" onclick="window.location.href='/'">Back</button>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+  
+	</form>
+  
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      
+      </button>
+      <strong>{{message}}</strong>
+    </div>
+ {% endfor %}
+{% endif %}
+  <br>
+  <br>
+  <p>-----------------</p>
+	<p class="text-center">If you already have an account, <button class="btn btn-primary" onclick="window.location.href='/logout'">Logout</button> instead.</p>
+
+</div>
+
+{% endblock %}

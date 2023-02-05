@@ -1,0 +1,12 @@
+{% extends "Structure/login_header.html" %}
+
+{% block content %} 
+<div class="container py-5">
+<button class="btn btn-primary" onclick='window.location.href="{% url 'element' priority_id element_id%}"'>Back</button>
+<form method="POST" action ="{% url 'add_aspect' priority_id element_id %}" enctype="multipart/form-data">
+{% csrf_token %}
+{{form}}
+<button>Submit</button>
+</form>
+</div>
+{% endblock %} 

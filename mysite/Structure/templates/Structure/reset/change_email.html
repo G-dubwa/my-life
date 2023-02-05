@@ -1,0 +1,9 @@
+{% autoescape off %}
+
+Hi {{user.username}}
+
+Please use the link below to verify your new email:
+
+http:://{{domain}}{% url 'email_reset' uidb64=uid token=token email=email %}
+
+{% endautoescape %}

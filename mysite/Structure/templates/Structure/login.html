@@ -1,0 +1,38 @@
+{% extends "Structure/login_header.html" %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+
+<!--Login--> 
+<div class="container py-5">
+  <h1>Login</h1>
+  <button class="btn btn-primary" onclick="window.location.href='/'">Back</button>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+    
+  </form>
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      
+      </button>
+      <strong>{{message}}</strong>
+    </div>
+ {% endfor %}
+{% endif %}
+  <p class="text-center">Don't have an account? 
+  {% if request.user.is_authenticated %}
+  <button class="btn btn-primary" onclick="window.location.href='/logout'">Logout</button>
+  {% else %}
+  <button class="btn btn-primary" onclick='window.location.href="{% url 'password_reset' %}"'>Forgot Password</button>
+  <button class="btn btn-primary" onclick="window.location.href='/register'">Create Account</button>
+  
+  {% endif %}
+  .</p>
+</div>
+
+{% endblock %}

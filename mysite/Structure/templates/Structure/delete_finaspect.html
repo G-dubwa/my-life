@@ -1,0 +1,17 @@
+{% extends "Structure/header.html" %}
+
+{% block content %} 
+
+<h2>Are you sure you want to delete this financial aspect</h2>
+
+
+    <h2><a href="{% url 'delete_finaspect' entity_id finaspect_id 1 %}" class="overlay-img">
+        
+        Delete         
+    </a></h2>
+
+    <h2><a href="{% url 'delete_finaspect' entity_id finaspect_id 3 %}" class="overlay-img">
+        
+        Cancel</a></h2>
+
+{% endblock %} 
